@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <div style="width: 100px; height: 100px;">
+        <img id="imagem" style="width: 100px; height: 100px;">
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    debugger;
+    var Fruta = function (name, image) {
+        this.name = name;
+        this.image = image;
+    }
+
+    var frutas = []
+    frutas.push(new Fruta('abacaxi', 'https://media.continente.pt/Sonae.eGlobal.Presentation.Web.Media/media.axd?resourceSearchType=2&resource=ProductId=2230127(eCsf$RetekProductCatalog$MegastoreContinenteOnline$Continente)&siteId=1&channelId=1&width=512&height=512&defaultOptions=1'));
+    frutas.push(new Fruta('uva', 'https://souagro.com.br/wp-content/uploads/2018/09/uva_verde_533487490.jpg'));
+    frutas.push(new Fruta('manga', 'https://bs.simplusmedia.com/i/f/o/saude/conteudo/beneficios-manga.jpg'));
+    frutas.push(new Fruta('abacate', 'https://abrilsaude.files.wordpress.com/2017/07/abacate3.jpg'));
+    frutas.push(new Fruta('caju', 'https://http2.mlstatic.com/50-sementes-fruta-caju-vermelho-p-mudas-interior-decoraco-D_NQ_NP_603084-MLB29051374096_122018-F.jpg'));
+
+    var input = document.getElementById('input');
+    input.addEventListener('keyup', function (event) {
+        var text = event.key;
+        var fruta = document.getElementById('input').value
+        for (var i = frutas.length - 1; i >= 0; i--) {
+            if (fruta == frutas[i].name) {
+                var image = document.getElementById('imagem');
+                var url = frutas[i].image
+                image.src = url
+            }
+        }
+    });
+</script>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div>
+        <input type="text" id="input" placeholder="Digite o nome de uma fruta">
+        <br>
+        <p id="text"></p>
+    </div>
+</body>
+    <script type="text/javascript">
+        var input = document.getElementById("input");
+        input.addEventListener('keyup', function(event) {
+            var text = document.getElementById("text");
+            text.textContent = document.getElementById("input").value;
+        });
+    </script>
+</html>

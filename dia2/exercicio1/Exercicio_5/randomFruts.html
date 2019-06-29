@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+</head>
+
+<body>
+    <button id="btn">Sortear Fruta</button>
+    <div>
+        <img src="" alt="" srcset="" id="imgFruit">
+    </div>
+
+    <script>
+        (function () {
+            const fruits = {
+                abacaxi: {
+                    fruta: 'abacaxi',
+                    imagem: 'https://media.continente.pt/Sonae.eGlobal.Presentation.Web.Media/media.axd?resourceSearchType=2&resource=ProductId=2230127(eCsf$RetekProductCatalog$MegastoreContinenteOnline$Continente)&siteId=1&channelId=1&width=512&height=512&defaultOptions=1'
+                },
+                uva: {
+                    fruta: 'uva',
+                    imagem: 'https://souagro.com.br/wp-content/uploads/2018/09/uva_verde_533487490.jpg'
+                },
+                manga: {
+                    fruta: 'manga',
+                    imagem: 'https://bs.simplusmedia.com/i/f/o/saude/conteudo/beneficios-manga.jpg'
+                },
+                abacate: {
+                    fruta: 'abacate',
+                    imagem: 'https://abrilsaude.files.wordpress.com/2017/07/abacate3.jpg'
+                },
+                caju: {
+                    fruta: 'caju',
+                    imagem: 'https://http2.mlstatic.com/50-sementes-fruta-caju-vermelho-p-mudas-interior-decoraco-D_NQ_NP_603084-MLB29051374096_122018-F.jpg'
+                }
+            }
+            const btn = document.querySelector("#btn")
+            const imgFruit = document.querySelector("#imgFruit")
+            let arrayOfFruits = [];
+            btn.addEventListener('click', (ev) => {
+
+                let index = Math.floor((5 * Math.random()));
+                while (arrayOfFruits.includes(index)) {
+                    console.log(index)
+                    index = Math.floor((5 * Math.random()));
+                }
+                arrayOfFruits.push(index)
+                if (arrayOfFruits.length === 5) arrayOfFruits = [];
+                imgFruit.setAttribute('src', fruits[Object.keys(fruits)[index]].imagem)
+            })
+        })();
+
+    </script>
+</body>
+
+</html>

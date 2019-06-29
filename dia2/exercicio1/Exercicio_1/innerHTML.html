@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <input type="text" id="input_text" name="input_text">
+    <button id="b1">ok</button>
+    <br/>
+
+    <h5 id="conteudo_text"></h5>
+</body>
+<script>
+    var botao = document.getElementById('b1');
+
+    botao.addEventListener('click', function(event) {
+        document.getElementById('conteudo_text').textContent = document.getElementById('input_text').value;
+    });
+</script>
+
+</html>
